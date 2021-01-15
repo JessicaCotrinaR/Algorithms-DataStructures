@@ -24,6 +24,7 @@ function flattenObject(oldObject) {
   function flattenHelper(currentObject, newObject, previousKeyName) {
     for (let key in currentObject) {
       let value = currentObject[key];
+      //if the constructor for our value is Object. If I just used typeof that would also return true if it was an Array, this way I am sure that I am only checking for object literals. If it is not an object, then we have to check to see if our previousKeyName was null or an empty string. If they were then we assign our value to our current key in our new object. Effectively just moving it over to the new object without changing anything.
       if (value.constructor !== Object) {
         if (previousKeyName == null || previousKeyName == "") {
           newObject[key] = value;
