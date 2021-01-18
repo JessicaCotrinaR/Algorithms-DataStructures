@@ -46,7 +46,7 @@ class Graph {
         }
       });
     }
-    start();
+    // start();
   }
   depthFirstInterative(start) {
     const stack = [start];
