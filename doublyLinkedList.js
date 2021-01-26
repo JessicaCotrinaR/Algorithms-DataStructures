@@ -5,7 +5,6 @@ class Node {
     this.prev = null;
   }
 }
-
 class DoublyLinkedList {
   constructor() {
     this.head = null;

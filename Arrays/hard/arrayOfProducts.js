@@ -19,3 +19,5 @@ function arrayOfProducts(array) {
   return products;
 }
 console.log(arrayOfProducts([5, 1, 4, 2]));
+//ouput:
+// [ 8, 40, 10, 20 ]
