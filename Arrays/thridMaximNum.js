@@ -1,10 +1,20 @@
-var thirdMax = function (nums) {
-  if (nums.length > 3) return nums[nums.length - 1];
-  if (nums.length === 3) return nums[nums.length - 1];
-  let seen = new Set();
-  for (let values of nums) {
-    seen.add(values);
+function thirdMax(nums) {
+  nums.sort((a, b) => b - a);
+  let arr = new Set();
+  for (let val of nums) {
+    arr.add(val);
   }
-  seen = Array.from(seen);
-  return seen[2];
-};
+  arr = Array.from(arr);
+  // for (let i=0; i<nums.length; i++) {
+  //     if (nums[i]!==nums[i+1]) {
+  //         arr.push(nums[i]);
+  //     }
+  // }
+  console.log(arr);
+  if (arr.length < 3) {
+    return Math.max(...arr);
+  } else {
+    return arr[2];
+  }
+}
+console.log(thirdMax([3, 2, 1]));
