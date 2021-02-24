@@ -8,12 +8,10 @@
 function linkedListCycle(head) {
   if (head === null) return false;
   //two pointer fast, slow 1->2->3->4
-  let slow = head;
-  let fast = head.next;
+  let slow = new ListNode(head);
+  let fast = new ListNode(head.next);
   while (slow !== fast) {
-    if (fast === null || fast.next === null) {
-      return false;
-    }
+    if (slow === null && fast === null) return false;
     slow = slow.next;
     fast = fast.next.next;
   }

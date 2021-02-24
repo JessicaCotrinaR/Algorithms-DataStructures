@@ -1,4 +1,4 @@
-function findMaximumDepth(root, depth) {
+function findMaximumDepth(root) {
   let answer = 0;
   if (root === null) return;
   maxim(root, 0);
