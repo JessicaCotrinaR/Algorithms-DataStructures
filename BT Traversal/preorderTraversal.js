@@ -28,3 +28,5 @@ var preorderTraversal = function (root) {
   traverse(root);
   return data;
 };
+
+console.log(Number("ds"));

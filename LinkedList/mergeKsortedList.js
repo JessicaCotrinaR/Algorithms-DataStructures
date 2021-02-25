@@ -10,7 +10,6 @@
  * @return {ListNode}
  */
 var mergeKLists = function (lists) {
-  console.log(lists.length);
   let arr = [];
   for (let i = 0; i < lists.length; i++) {
     let innerList = lists[i];
