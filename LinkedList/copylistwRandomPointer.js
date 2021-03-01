@@ -20,3 +20,5 @@ function copyListwithRandomPointer(head) {
   }
   return clones.get(head);
 }
+
+//time o(n) space o(n)

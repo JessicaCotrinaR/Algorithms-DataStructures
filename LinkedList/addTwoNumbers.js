@@ -18,6 +18,7 @@ var addTwoNumbers = function (l1, l2) {
     let sum = carry;
     if (l1) {
       sum += l1.val;
+      l1 = l1.next;
     }
     if (l2) {
       sum += l2.val;
@@ -29,7 +30,9 @@ var addTwoNumbers = function (l1, l2) {
     } else {
       carry = 0;
     }
+    current.next = new ListNode(sum);
+    current = current.next;
   }
-  current.next = new ListNode(sum);
+
   return dummyhead.next;
 };
