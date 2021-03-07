@@ -10,11 +10,14 @@ function spiralTraverse(array) {
   let endCol = array[0].length - 1;
 
   while (startRow <= endRow && startCol <= endCol) {
+    // from col until endCol--> [1,2,3,4,5]
     for (let col = startCol; col <= endCol; col++) {
       newArr.push(array[startRow][col]);
     }
+
+    // start from the second row  until endRow
     for (let row = startRow + 1; row <= endRow; row++) {
-      newArr.push(array[row][endCol]);
+      newArr.push(array[row][endCol]); //--> 10,15,20
     }
 
     for (let col = endCol - 1; col >= startCol; col--) {
@@ -37,3 +40,11 @@ function spiralTraverse(array) {
 
   return newArr;
 }
+let array = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [11, 12, 13, 14, 15],
+  [16, 17, 18, 19, 20],
+];
+
+console.log(spiralTraverse(array));
