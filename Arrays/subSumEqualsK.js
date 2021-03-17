@@ -7,8 +7,10 @@ function subSumEqualK(nums, k) {
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
     curentsum += nums[i];
+    console.log("currz", curentsum);
     if (obj[curentsum - k]) {
       count += obj[curentsum - k];
+      console.log("çount", count);
     }
     obj[curentsum] = obj[curentsum] ? obj[curentsum] + 1 : 1;
   }

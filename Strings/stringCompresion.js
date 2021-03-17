@@ -1,20 +1,22 @@
 // aabbc = a2b2c
-function stringCompression(str) {
-  let compString = "";
-  for (let i = 0; i < str.length; i++) {
-    let currentLetter = str[i];
+function stringCompression(chars) {
+  let compString = [];
+  for (let i = 0; i < chars.length; i++) {
+    let currentLetter = chars[i];
     let currentcount = 1;
-    while (str[i + 1] === currentLetter) {
+    while (chars[i + 1] === currentLetter) {
       currentcount++;
       i++;
     }
-    compString += currentLetter + currentcount;
-    if (compString.length > str.length) return compString;
+    compString.push(currentLetter);
+    compString.push(currentcount);
+    if (compString.length > chars.length) return compString.length;
   }
-  return compString;
+  return compString.length;
 }
-let a = "a";
+//let a = "a";
 let b = 2;
 //console.log(a + b);
-console.log(stringCompression(["a", "a", "b", "b", "c"])); //[a,1,0] 3
-["a", "2", "b", "2", "c", "3"][("a", "2", "b", "2", "c", "3")];
+console.log(stringCompression(["a", "a", "b", "b", "c", "c", "c"]));
+//let a = "ana";
+//console.log(a.split(""));
