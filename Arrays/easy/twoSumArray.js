@@ -3,11 +3,10 @@ function twoSumArr(arr, target) {
   let nums = {};
   for (let i = 0; i < arr.length; i++) {
     let match = target - arr[i];
-    if (nums[match]) {
-      return [match, arr[i]];
-    } else {
-      nums[arr[i]] = true;
+    if (nums[match] !== undefined) {
+      return [i, arr[i]];
     }
+    nums[arr[i]] = i;
   }
   return [];
 }
@@ -30,4 +29,4 @@ function twoSumArr(arr, target) {
 //     }
 //   }
 // }
-// console.log(twoSumArr([0, 2, 3, 4], 5));
+console.log(twoSumArr([0, 2, 3, 4], 5));
