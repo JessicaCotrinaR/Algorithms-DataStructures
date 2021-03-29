@@ -19,9 +19,7 @@ function candyCrush(board) {
   //mark cols
   for (let c = 0; c < board[0].length; c++) {
     for (let r = 0; r < board.length - 2; r++) {
-      console.log(board[0][0]);
       let num1 = Math.abs(board[r][c]);
-      //console.log("num1", num1);
       let num2 = Math.abs(board[r + 1][c]);
       let num3 = Math.abs(board[r + 2][c]);
       if (num1 === num2 && num2 === num3 && num1 !== 0) {
@@ -32,7 +30,6 @@ function candyCrush(board) {
       }
     }
   }
-  //console.log("=====>2", board);
   //drop
   if (!isDone) {
     for (let c = 0; c < board[0].length; c++) {
@@ -52,12 +49,11 @@ function candyCrush(board) {
   else return candyCrush(board);
 }
 let board = [
-  [5, 1, 512, 3, 3],
-  [610, 4, 1, 613, 614],
-  [710, 1, 2, 713, 714],
-  [810, 1, 2, 1, 1],
-  [1, 1, 2, 2, 2],
-  [4, 1, 4, 4, 1014],
+  [5, 1, 2, 5, 3],
+  [2, 2, 2, 6, 4],
+  [2, 4, 8, 7, 4],
+  [2, 3, 9, 3, 1],
 ];
 console.log(candyCrush(board));
-console.log(Math.abs(110));
+
+let a = "a n";

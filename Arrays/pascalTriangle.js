@@ -18,4 +18,4 @@ var generate = function (numRows) {
   return answer;
 };
 
-console.log(generate(3));
+console.log(generate(1));

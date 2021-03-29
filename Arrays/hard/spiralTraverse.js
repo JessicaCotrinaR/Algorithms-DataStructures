@@ -3,43 +3,34 @@
 
 function spiralTraverse(array) {
   // Write your code here.
-  let newArr = [];
   let startRow = 0;
   let endRow = array.length - 1;
   let startCol = 0;
   let endCol = array[0].length - 1;
-
-  while (startRow <= endRow && startCol <= endCol) {
-    // from col until endCol--> [1,2,3,4,5]
-    for (let col = startCol; col <= endCol; col++) {
-      newArr.push(array[startRow][col]);
+  let answer = [];
+  while (startCol <= endCol && startRow <= endRow) {
+    for (let i = startCol; i <= endCol; i++) {
+      answer.push(array[startRow][i]);
     }
-
-    // start from the second row  until endRow
-    for (let row = startRow + 1; row <= endRow; row++) {
-      newArr.push(array[row][endCol]); //--> 10,15,20
+    for (let j = startRow + 1; j <= endRow; j++) {
+      answer.push(array[j][endCol]);
     }
-
-    for (let col = endCol - 1; col >= startCol; col--) {
-      //when there os  a single row in the middle of the matri.
-      //we don't want to double the matrix
+    for (let k = endCol - 1; k >= startCol; k--) {
       if (startRow === endRow) break;
-      newArr.push(array[endRow][col]);
+      answer.push(array[endRow][k]);
     }
-    for (let row = endRow - 1; row > startRow; row--) {
-      //when there os  a single column in the middle of the matri.
-      //we don't want to double the matrix
+    for (let q = endRow - 1; q > startRow; q--) {
       if (startCol === endCol) break;
-      newArr.push(array[row][startCol]);
+      answer.push(array[q][startCol]);
     }
     startRow++;
     endRow--;
     startCol++;
     endCol--;
   }
-
-  return newArr;
+  return answer;
 }
+
 let array = [
   [1, 2, 3, 4, 5],
   [6, 7, 8, 9, 10],
