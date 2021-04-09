@@ -13,5 +13,5 @@ function maxSubArrSum(nums, size) {
   return maxSumSeen;
 }
 
-const arr = [1, 2, 3, 5, 4, 8, 6, 2];
+const arr = [1, 3, -1, -3, 5, 3, 6, 7];
 console.log(maxSubArrSum(arr, 3));
