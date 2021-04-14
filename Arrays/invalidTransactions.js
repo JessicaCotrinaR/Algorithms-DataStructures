@@ -1,6 +1,5 @@
 /**
- * @param {string[]} transactions
- * @return {string[]}
+
  transactions = 
  
  ["alice,20,800,mtv","alice,50,100,beijing"]
@@ -8,22 +7,35 @@
  
  ["alice,20,800,mtv","alice,50,100,beijing"]
  */
-var invalidTransactions = function (transactions) {
-  let invalid = [];
-  let counter = 0;
-  let time = 0;
-  let city = "";
-  for (let i = 0; i < transactions.length; i++) {
-    let words = transactions[i].split(",");
-    time += words[1];
-    counter++;
-    city += words[3];
-    if (words[2] > 1000) {
-      invalid.push(transactions[i]);
-    } else if (counter !== 0) {
-      if (time > 60) invalid.push(transactions[i - 1], transactions[i]);
-    }
+const isInvalid = (transaction, map) => {
+  const [name, time, amount, city] = transaction.split(",");
+
+  if (amount > 1000) return true;
+
+  const prevTrans = map[name];
+
+  for (const trans of prevTrans) {
+    if (city !== trans.city && Math.abs(time - trans.time) <= 60) return true;
   }
+
+  return false;
+};
+
+const invalidTransactions = (transactions) => {
+  const invalid = [];
+  const map = {};
+
+  for (const trans of transactions) {
+    const [name, time, amount, city] = trans.split(",");
+
+    if (name in map) map[name].push({ time, city });
+    else map[name] = [{ time, city }];
+  }
+
+  for (const trans of transactions) {
+    if (isInvalid(trans, map)) invalid.push(trans);
+  }
+
   return invalid;
 };
 console.log(invalidTransactions(["alice,20,800,mtv", "alice,50,100,beijing"]));
