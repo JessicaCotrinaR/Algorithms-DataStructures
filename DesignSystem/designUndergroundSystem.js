@@ -7,22 +7,23 @@ undergroundSystem.prototype.checkIn = function (id, stationName, t) {
   this.clients.set(id, [stationName, t]);
 };
 undergroundSystem.prototype.checkOut = function (id, stationName, t) {
-  let startStationName = this.clients.get(id); // return [stationName, t]
-  let stationKey = startStationName[0] + "-" + stationName;
-  let startTime = startStationName[1];
-  if (this.stations.has(stationKey)) {
-    let totalTime = t - startTime + this.stations.get(stationKey)[0];
-    let totalClients = ++this.stations.get(stationKey)[1];
-    this.stations.set(stationKey, [totalTime, totalClients]);
+  //get the client
+  let infoClient = this.clients.get(id);
+  let stationsName = infoClient[0] + "-" + stationName;
+  let totalTime = infoClient[1] - t;
+  if (this.stations.has(stationsName)) {
+    let newTotaltime = totalTime + this.get(stationsName[0]);
+    let totalClients = ++this.stations.get(stationsName)[1];
+    this.stations.set(stationsName, [newTotaltime, totalClients]);
   } else {
-    this.stations.set(stationKey, [t - startTime, 1]);
+    this.stations.set(stationsName, totalTime, 1);
   }
 };
 undergroundSystem.prototype.getAverageTime = function (
   startStation,
   endStation
 ) {
-  let stationsnewKey = startStation + "-" + endStation;
-  let values = this.stations.get(stationsnewKey);
+  let stationsNam = startStation + "-" + endStation;
+  let values = this.stations.get(stationsNam);
   return values[0] / values[1];
 };
