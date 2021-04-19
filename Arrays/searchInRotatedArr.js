@@ -4,15 +4,10 @@ function searchInRotatedArr(nums, target) {
 
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
-    console.log("mid", mid);
-    console.log("left", left);
-    console.log("right", right);
     if (nums[mid] === target) {
       return mid;
     }
-
     // When dividing the roated array into two halves, one must be sorted.
-
     // Check if the left side is sorted
     if (nums[left] <= nums[mid]) {
       if (nums[left] <= target && target <= nums[mid]) {
