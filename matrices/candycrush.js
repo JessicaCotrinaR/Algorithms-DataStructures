@@ -40,7 +40,9 @@ function candyCrush(board) {
           idx--;
         }
       }
+      console.log(idx);
       for (let r = idx; r >= 0; r--) {
+        console.log("row", r);
         board[r][c] = 0;
       }
     }
@@ -49,10 +51,10 @@ function candyCrush(board) {
   else return candyCrush(board);
 }
 let board = [
-  [5, 1, 2, 5, 3],
-  [2, 2, 2, 6, 4],
-  [2, 4, 8, 7, 4],
-  [2, 3, 9, 3, 1],
+  [1, 2, 3, 4],
+  [7, 7, 7, 9],
+  [7, 4, 8, 7],
+  [7, 3, 9, 3],
 ];
 console.log(candyCrush(board));
 
