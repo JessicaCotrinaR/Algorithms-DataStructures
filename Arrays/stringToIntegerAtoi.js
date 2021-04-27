@@ -19,3 +19,5 @@ const myAtoi = (str) => {
     return s;
   }
 };
+console.log(myAtoi("42 hello"));
+console.log(Math.pow(2, 2));
