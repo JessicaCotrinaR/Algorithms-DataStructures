@@ -3,7 +3,12 @@ function totalFruit(tree) {
   let currentLargest = -Infinity;
   let obj = {};
   for (let i = 0; i < tree.length; i++) {
-    obj[tree[i]] = (obj[tree[i]] || 0) + 1;
+    if (obj[tree[i]]) {
+      obj[tree[i]] = obj[tree[i]] + 1;
+    } else {
+      obj[tree[i]] = 1;
+    }
+    console.log(obj);
     //keep update the obj until more than 2 elements in the continuous subarr
     while (Object.keys(obj).length > 2) {
       obj[tree[left]]--;
@@ -16,3 +21,5 @@ function totalFruit(tree) {
   }
   return currentLargest;
 }
+
+console.log(totalFruit([1, 2, 2, 3, 1]));
