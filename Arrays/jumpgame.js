@@ -22,3 +22,5 @@ function canJump(nums) {
     curMax = Math.max(nums[i] + i, curMax);
   }
 }
+let nums = [2, 1, 1, 3, 1, 1, 1];
+console.log(canJump(nums));
