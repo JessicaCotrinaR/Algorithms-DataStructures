@@ -4,10 +4,11 @@ function rotateImage(matrix) {
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       //swap
-      let tmp = matrix[i][j]; // have a temp
+      let tmp = matrix[i][j]; // have a temp where we are going to have a value to swap
       matrix[i][j] = matrix[j][i];
       matrix[j][i] = tmp;
       if (i == j) {
+        //if i and j are equal means that we are done swapping
         break;
       }
     }
