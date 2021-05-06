@@ -12,6 +12,7 @@ function canJump(nums) {
   let curMax = nums[0];
   for (let i = 1; i < nums.length; i++) {
     if (i > curMax) {
+      console.log("entro");
       return false;
     }
 
@@ -20,6 +21,7 @@ function canJump(nums) {
     }
 
     curMax = Math.max(nums[i] + i, curMax);
+    console.log(curMax);
   }
 }
 let nums = [2, 1, 1, 3, 1, 1, 1];
