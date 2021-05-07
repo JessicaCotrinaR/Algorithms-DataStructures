@@ -32,6 +32,7 @@ function minWindow(s, t) {
         start++;
       }
     } else {
+      end++;
       if (m.has(s[end])) m.set(s[end], m.get(s[end]) - 1);
       if (m.get(s[end]) == 0) count--;
     }
