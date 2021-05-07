@@ -31,6 +31,8 @@ function minWindow(s, t) {
         if (m.get(s[start]) > 0) count++;
         start++;
       }
+    } else {
+      end++;
     }
   }
   return res;
