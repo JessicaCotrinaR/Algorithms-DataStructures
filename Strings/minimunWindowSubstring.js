@@ -10,7 +10,6 @@ there will always be only one unique minimum window in s.
 Input: s = "ADOBECODEBANC", t = "ABC"
 Output: "BANC"
 */
-
 function minWindow(s, t) {
   if (s.length < t.length) return "";
   let m = new Map();
@@ -19,9 +18,10 @@ function minWindow(s, t) {
   }
   let start = 0,
     end = 0,
-    count = m.size,
-    substr = "";
+    count = m.size;
   let res = "";
+  console.log(m);
+  console.log(count);
   while (end <= s.length) {
     if (count == 0) {
       // our window contains all characters of t
@@ -32,12 +32,15 @@ function minWindow(s, t) {
         start++;
       }
     } else {
-      end++;
       if (m.has(s[end])) m.set(s[end], m.get(s[end]) - 1);
       if (m.get(s[end]) == 0) count--;
+      end++;
     }
   }
   return res;
   // Time Complexity: O(N)
   // Space Complexity: O(N)
 }
+let s = "ADOBECODEBANC",
+  t = "ABC";
+console.log(minWindow(s, t));
