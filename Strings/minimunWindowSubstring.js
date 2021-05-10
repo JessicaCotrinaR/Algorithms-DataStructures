@@ -15,13 +15,11 @@ function minWindow(s, t) {
   let m = new Map();
   for (let i = 0; i < t.length; i++) {
     m.set(t[i], m.get(t[i]) + 1 || 1);
-  }
+  } // we have a map for t
   let start = 0,
     end = 0,
     count = m.size;
   let res = "";
-  console.log(m);
-  console.log(count);
   while (end <= s.length) {
     if (count == 0) {
       // our window contains all characters of t
