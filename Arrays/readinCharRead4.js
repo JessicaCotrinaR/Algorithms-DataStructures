@@ -6,7 +6,8 @@ File file("abc");
 Solution sol;
 sol.read(buf, 1); // After calling your read method, buf should contain "a". We read a total of 1 character from the file, so return 1.
 sol.read(buf, 2); // Now buf should contain "bc". We read a total of 2 characters from the file, so return 2.
-sol.read(buf, 1); // We have reached the end of file, no more characters can be read. So return 0.
+sol.read(buf, 1); 
+// We have reached the end of file, no more characters can be read. So return 0.
 Assume buf is allocated and guaranteed to have enough space for storing all characters from the file.
 */
 function solution(read4) {
