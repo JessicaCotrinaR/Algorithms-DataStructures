@@ -5,7 +5,6 @@ function lengthOfLongestSubstringTwoDistinct(s) {
     hash = {};
   let counter = 0,
     lengthOfSubstring = 0;
-
   while (right < s.length) {
     if (!hash[s[right]]) {
       hash[s[right]] = 1;
