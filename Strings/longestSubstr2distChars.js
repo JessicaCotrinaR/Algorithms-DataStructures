@@ -23,7 +23,6 @@ function lengthOfLongestSubstringTwoDistinct(s) {
     right++;
     lengthOfSubstring = Math.max(lengthOfSubstring, right - left);
   }
-
   return lengthOfSubstring;
 }
 console.log(lengthOfLongestSubstringTwoDistinct("eceba"));
