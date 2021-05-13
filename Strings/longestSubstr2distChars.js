@@ -12,7 +12,6 @@ function lengthOfLongestSubstringTwoDistinct(s) {
     } else {
       hash[s[right]]++;
     }
-
     while (counter > 2) {
       hash[s[left]]--;
       if (hash[s[left]] === 0) {
