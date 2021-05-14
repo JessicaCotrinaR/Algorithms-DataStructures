@@ -21,4 +21,4 @@ function validParentheses(str) {
   return stack.length === 0 ? true : false;
 }
 
-console.log(validParentheses("(a)"));
+console.log(validParentheses("["));
