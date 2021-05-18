@@ -1,5 +1,6 @@
 function findPairs(nums, k) {
   if (k < 0) return 0;
+  //create a set to keep only unique values
   nums = k === 0 ? nums : Array.from(new Set(nums));
   console.log(nums);
   let map = new Map(),
