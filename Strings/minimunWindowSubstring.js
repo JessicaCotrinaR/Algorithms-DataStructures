@@ -41,4 +41,4 @@ function minWindow(s, t) {
 }
 let s = "ADOBECODEBANC",
   t = "ABC";
-console.log(minWindow(s, t));
+console.log(minWindow(s, t)); //bang
