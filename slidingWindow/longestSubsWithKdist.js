@@ -8,6 +8,7 @@ function longestSubstrwithKdist(str, k) {
       charFrecuency[rightChar] = 0;
     }
     charFrecuency[rightChar] += 1;
+    console.log(charFrecuency);
     while (Object.keys(charFrecuency).length > k) {
       let leftChar = str[windowStart];
       charFrecuency[leftChar] -= 1;
@@ -16,7 +17,22 @@ function longestSubstrwithKdist(str, k) {
       }
       windowStart += 1;
     }
+    console.log(
+      "longest",
+      longest,
+      windowStart,
+      windowEnd,
+      "q->",
+      windowEnd - windowStart + 1
+    );
     longest = Math.max(longest, windowEnd - windowStart + 1);
+    console.log(
+      "longest despues",
+      longest,
+      windowEnd,
+      "q->",
+      windowEnd - windowStart + 1
+    );
   }
   return longest;
 }
