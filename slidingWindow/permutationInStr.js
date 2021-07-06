@@ -47,6 +47,9 @@ const find_permutation = function (str, pattern) {
   return false;
 };
 
-let string = "bcdxabcdy",
-  pattern = "bcdyabcdz";
+// "ab"
+// "eidboaoo"
+
+let string = "ab",
+  pattern = "eidboaoo";
 console.log(find_permutation(string, pattern));
